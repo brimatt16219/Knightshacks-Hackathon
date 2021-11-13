@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Props(no col)
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 882021323
+    locked: 0
+  - name: Props (no col)
+    uniqueID: 2624643443
     locked: 0
