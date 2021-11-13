@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jump;
 
+
     public Transform ceiling;
     public Transform ground;
     public LayerMask gmask;
@@ -103,5 +104,24 @@ public class PlayerMovement : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("goldCoin"))
+        {
+            Destroy(other.gameObject);
+            ScoreManager.instance.ChangeScore(5);
+        }
+        if (other.gameObject.CompareTag("silverCoin"))
+        {
+            Destroy(other.gameObject);
+            ScoreManager.instance.ChangeScore(2);
+        }
+        if (other.gameObject.CompareTag("bronzeCoin"))
+        {
+            Destroy(other.gameObject);
+            ScoreManager.instance.ChangeScore(1);
+        }
     }
 }

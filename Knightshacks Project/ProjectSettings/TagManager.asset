@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - goldCoin
+  - silverCoin
+  - bronzeCoin
   layers:
   - Default
   - TransparentFX
@@ -41,9 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Props (no col)
+    uniqueID: 2624643443
+    locked: 0
   - name: Player
     uniqueID: 882021323
     locked: 0
-  - name: Props (no col)
-    uniqueID: 2624643443
+  - name: Bushes
+    uniqueID: 2292411449
+    locked: 0
+  - name: UI
+    uniqueID: 2792378913
     locked: 0
