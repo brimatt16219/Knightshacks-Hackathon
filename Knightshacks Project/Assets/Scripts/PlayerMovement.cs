@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform ground;
     public LayerMask gmask;
     public float gradius;
+    public int maxJumps;
 
     Animator anim;
 
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private float move;
     private bool jumping = false;
     private bool grounded;
+    private int jumps;
 
     // called before scene is loaded
     private void Awake()
@@ -28,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    void Start()
+    {
+        jumps = maxJumps;
+    }
 
     // Update is called once per frame
     void Update()
@@ -43,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(ground.position, gradius, gmask);
+        if (grounded)
+        {
+            jumps = maxJumps;
+        }
+
         Move();
         if (rb.velocity != Vector2.zero)
         {
@@ -69,9 +80,10 @@ public class PlayerMovement : MonoBehaviour
     private void GetInput()
     {
         move = Input.GetAxis("Horizontal");
-        if(Input.GetButtonDown("Jump") && grounded)
+        if(Input.GetButtonDown("Jump") && jumps > 0)
         {
             jumping = true;
+
         }
         anim.SetBool("jumping", !grounded);
     }
@@ -81,7 +93,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
         if (jumping)
         {
-            rb.AddForce(new Vector2(0f, jump));
+            rb.velocity = new Vector2(rb.velocity.x, jump);
+            jumps --;
         }
         jumping = false;
     }
