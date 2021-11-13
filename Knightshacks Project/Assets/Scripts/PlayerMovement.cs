@@ -111,17 +111,17 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("goldCoin"))
         {
             Destroy(other.gameObject);
-            ScoreManager.instance.ChangeScore(5);
+
         }
         if (other.gameObject.CompareTag("silverCoin"))
         {
             Destroy(other.gameObject);
-            ScoreManager.instance.ChangeScore(2);
+
         }
         if (other.gameObject.CompareTag("bronzeCoin"))
         {
             Destroy(other.gameObject);
-            ScoreManager.instance.ChangeScore(1);
+
         }
     }
 }
