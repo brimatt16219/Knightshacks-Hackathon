@@ -452,6 +452,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -461,8 +463,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -483,9 +485,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -3090,6 +3095,128 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Background_97: 785912053929389728
+      Background_14: 4124766128871187191
+      Background_73: 4717322009094288925
+      Background_107: 2134407049601345205
+      Background_112: 3759019981418735379
+      Background_12: -1184522252448690435
+      Background_10: 3751706319272519800
+      Background_30: 7013917598222876018
+      Background_69: 2061169393571314535
+      Background_40: -361931462542267694
+      Background_111: 6458238798702630128
+      Background_22: -3202210406112372737
+      Background_29: -4533083914078097330
+      Background_33: 3315751534633444085
+      Background_58: 3208672395415574482
+      Background_3: 8305014007553818654
+      Background_83: -2975774977990403939
+      Background_103: -368368909670912194
+      Background_2: 8222454533072939405
+      Background_6: -4821837225436941063
+      Background_105: 3377097418030170802
+      Background_9: 5657654767279156548
+      Background_96: 3571139063392406720
+      Background_28: 7183733443152805678
+      Background_51: 6209917732432790983
+      Background_66: -4696799710862995673
+      Background_119: 8528634717499032377
+      Background_85: 2101754337816979007
+      Background_11: 5689521111678254879
+      Background_15: -5396132258965337617
+      Background_25: 5345675015610300735
+      Background_64: -8603916624704453457
+      Background_74: 3403362236461378323
+      Background_117: -5167234475020866554
+      Background_89: 6619084761781097707
+      Background_37: 1898530925414270524
+      Background_75: -4203426945447371315
+      Background_84: -983543067935247701
+      Background_48: -2627812212225746284
+      Background_79: -804644554355293726
+      Background_54: 5312875324475708847
+      Background_13: 2669065081613744858
+      Background_60: -6209047714942013566
+      Background_55: -1569246105020622745
+      Background_0: -6884224323981422677
+      Background_17: -7844662469168323346
+      Background_5: -3958678274390686719
+      Background_19: 8259849923703159093
+      Background_76: -8696890036876182225
+      Background_24: 3635372736935354343
+      Background_53: 671958663085566153
+      Background_38: -1942895993129587857
+      Background_86: -6321619839820956806
+      Background_104: 7666655877152952095
+      Background_78: 8332947841878236197
+      Background_98: 3930179768535246400
+      Background_101: -3991111223770973681
+      Background_7: 7028156775451301730
+      Background_115: -1047713078463486373
+      Background_114: -8242241707831622474
+      Background_72: 8514158045951888540
+      Background_109: 6433753744722846221
+      Background_71: 457684309396412733
+      Background_94: 8340050287687848614
+      Background_21: 7984505224714249162
+      Background_87: 6506341406589708931
+      Background_92: -6401261321884103241
+      Background_102: -8524863178435894390
+      Background_108: -7219475528203118491
+      Background_70: -5074972782377567030
+      Background_88: 1132515961953128425
+      Background_93: -2819751451127421186
+      Background_90: -1667705617442827303
+      Background_45: -2816498497282941343
+      Background_100: 3440679635895403628
+      Background_65: -3363196915348198253
+      Background_95: -4654866701008371317
+      Background_4: -2146368423942107817
+      Background_39: -5082689722369330026
+      Background_18: 5816489992034856315
+      Background_59: 1512219034373573527
+      Background_20: -8175214546815243971
+      Background_91: 1205230241233903070
+      Background_57: -671832180054882425
+      Background_113: -5990662746792452582
+      Background_106: -3480662228228301381
+      Background_68: -2292841057876072545
+      Background_23: 7559667395802922924
+      Background_56: 5738690865218677612
+      Background_82: 3038900361199188170
+      Background_120: 3503873105060646276
+      Background_8: -6975036532566498788
+      Background_47: -2340496113543573645
+      Background_61: 3105821518495585832
+      Background_26: -299319040907507130
+      Background_110: -8867278923639196387
+      Background_42: 6892128069230718408
+      Background_52: 8651487322240277519
+      Background_81: 6143683801435735736
+      Background_44: -4743304708434816122
+      Background_1: -3696051380107271510
+      Background_41: -6380654015496872098
+      Background_49: 98753484231520043
+      Background_99: -1422345299484937852
+      Background_27: -4385901911928636727
+      Background_77: 2989844950992699688
+      Background_50: -4388187172676431188
+      Background_31: -3545097277708298872
+      Background_80: -3545744465267245334
+      Background_16: 4730879572495800098
+      Background_35: 4146750215183003818
+      Background_67: 3761853599097862301
+      Background_116: -6357383191428151408
+      Background_63: 8000548120706920556
+      Background_34: 8795698520555123846
+      Background_46: 258155577206154548
+      Background_62: 7065803778053256061
+      Background_118: 6429304592657681279
+      Background_36: 5785239175260750690
+      Background_43: -8996476645299656793
+      Background_32: 1509818387281327783
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
