@@ -7,6 +7,7 @@ TagManager:
   - goldCoin
   - silverCoin
   - bronzeCoin
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 882021323
+    locked: 0
+  - name: Ground
+    uniqueID: 3956019483
     locked: 0
   - name: Bushes
     uniqueID: 2292411449

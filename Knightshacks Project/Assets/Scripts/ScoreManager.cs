@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    public Text text;
+    public Text coinText;
+    public Text healthText;
     int score = 0;
+    public float health = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +20,18 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    
+    public void ChangeHealth(float damage)
+    {
+        health -= damage;
+        healthText.text = health.ToString();
+    }
+    
+
     public void ChangeScore(int coinValue)
     {
         score += coinValue;
-        text.text = score.ToString();
+        coinText.text = score.ToString();
     }
 }
 

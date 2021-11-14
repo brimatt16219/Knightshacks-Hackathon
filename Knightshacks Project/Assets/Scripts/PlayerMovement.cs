@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement player;
+
+    public ParticleSystem dust;
 
     public float speed;
     public float jump;
@@ -81,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     private void GetInput()
     {
         move = Input.GetAxis("Horizontal");
-        if(Input.GetButtonDown("Jump") && jumps > 0)
+        if(Input.GetKeyDown(KeyCode.X) && jumps > 0)
         {
             jumping = true;
 
@@ -102,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
+        Dust();
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
@@ -123,5 +127,22 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
 
         }
+
+        /*
+        if (other.gameObject.CompareTag("enemy"))
+        {
+            ScoreManager.instance.ChangeHealth(MobAI.mob.bodyDamage);
+        }
+        */
+    }
+
+    public void TakeHit()
+    {
+        ScoreManager.instance.ChangeHealth(MobAI.mob.bodyDamage);
+    }
+
+    void Dust()
+    {
+        dust.Play();
     }
 }
