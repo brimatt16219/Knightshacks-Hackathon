@@ -8,6 +8,7 @@ TagManager:
   - silverCoin
   - bronzeCoin
   - enemy
+  - playerFeet
   layers:
   - Default
   - TransparentFX

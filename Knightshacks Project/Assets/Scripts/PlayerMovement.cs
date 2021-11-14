@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement player;
 
-    public ParticleSystem dust;
+    //public ParticleSystem dust;
 
     public float speed;
     public float jump;
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumping = false;
     private bool grounded;
     private int jumps;
+    public float bounce = 20f;
 
     // called before scene is loaded
     private void Awake()
@@ -105,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        Dust();
+        //Dust();
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
@@ -141,8 +142,14 @@ public class PlayerMovement : MonoBehaviour
         ScoreManager.instance.ChangeHealth(MobAI.mob.bodyDamage);
     }
 
-    void Dust()
+    // void Dust()
+    // {
+    //     dust.Play();
+    // }
+
+    public void Boost(float boost)
     {
-        dust.Play();
+        rb.AddForce(Vector2.up * boost, ForceMode2D.Impulse);
+        Debug.Log("Boost");
     }
 }
