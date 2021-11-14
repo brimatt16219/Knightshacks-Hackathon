@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MobAI : MonoBehaviour, CollisionHandler
+public class Enemy : MonoBehaviour, CollisionHandler
 {
-    public static MobAI mob;
+    public static Enemy mob;
 
     public Transform body;
 
@@ -14,7 +14,10 @@ public class MobAI : MonoBehaviour, CollisionHandler
 
     public GameObject coin;
 
-    
+    public Transform GetBody()
+    {
+        return body;
+    }
 
     public void TakeDamage(int damage)
     {
@@ -32,11 +35,12 @@ public class MobAI : MonoBehaviour, CollisionHandler
         Destroy(gameObject);
     }
 
-    public void CollisionEnter(string colliderName, GameObject other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        //Debug.Log("TOUCHING!");
+        if (other.gameObject.CompareTag("Player"))
         {
-            PlayerMovement.player.TakeHit();
+            ScoreManager.instance.ChangeHealth(bodyDamage);
         }
     }
 }

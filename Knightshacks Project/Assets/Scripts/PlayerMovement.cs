@@ -5,12 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement player;
+    public Transform body;
 
     public ParticleSystem dust;
 
     public float speed;
     public float jump;
 
+    public float kb = 100f;
+    public float kbyMax = 10f;
+    public float thrust;
 
     public Transform ceiling;
     public Transform ground;
@@ -23,9 +27,19 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool facingRight = true;
     private float move;
-    private bool jumping = false;
+    public bool jumping = false;
     private bool grounded;
     private int jumps;
+
+    public float knockback;
+    public float knockbackLength;
+    public float knockbackCount;
+    public bool knockFromRight;
+
+    public Transform GetBody()
+    {
+        return body;
+    }
 
     // called before scene is loaded
     private void Awake()
@@ -44,7 +58,9 @@ public class PlayerMovement : MonoBehaviour
     {
         //get player input
         
+
         GetInput();
+        
 
         Turn();
 
@@ -58,7 +74,25 @@ public class PlayerMovement : MonoBehaviour
             jumps = maxJumps;
         }
 
-        Move();
+        if (knockbackCount <= 0)
+        {
+            Move();
+        }
+        else
+        {
+            if(knockFromRight)
+            {
+                rb.velocity = new Vector2(-knockback, knockback);
+            }
+            if(!knockFromRight)
+            {
+                rb.velocity = new Vector2(knockback, knockback);
+            }
+            knockbackCount -= Time.deltaTime;
+        }
+        
+           
+
         if (rb.velocity != Vector2.zero)
         {
             anim.SetBool("moving", true);
@@ -127,22 +161,13 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
 
         }
-
-        /*
-        if (other.gameObject.CompareTag("enemy"))
-        {
-            ScoreManager.instance.ChangeHealth(MobAI.mob.bodyDamage);
-        }
-        */
-    }
-
-    public void TakeHit()
-    {
-        ScoreManager.instance.ChangeHealth(MobAI.mob.bodyDamage);
+        
     }
 
     void Dust()
     {
         dust.Play();
     }
+
+    
 }
