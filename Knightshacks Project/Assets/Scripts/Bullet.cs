@@ -31,6 +31,9 @@ public class Bullet : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
-        Destroy(gameObject);
+        if (!other.gameObject.CompareTag("goldCoin") || !other.gameObject.CompareTag("silverCoin") || !other.gameObject.CompareTag("bronzeCoin"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
